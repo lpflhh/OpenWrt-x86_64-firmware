@@ -1,0 +1,9 @@
+#!/bin/sh /etc/rc.common
+START=99
+start() {
+  ip link set ra0 up
+  ip link set rai0 up
+
+  brctl addif br-lan ra0
+  brctl addif br-lan rai0
+}
